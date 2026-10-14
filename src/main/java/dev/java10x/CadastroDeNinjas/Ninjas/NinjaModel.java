@@ -1,8 +1,10 @@
-package dev.java10x.CadastroDeNinjas;
+package dev.java10x.CadastroDeNinjas.Ninjas;
 
+import dev.java10x.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
 
-// Entity transforma uma classe em uma entidade do BD.
+import java.util.List;
+
 @Entity
 @Table(name = "tb_cadastro")
 public class NinjaModel {
@@ -13,6 +15,11 @@ public class NinjaModel {
     private String nome;
     private String email;
     private int idade;
+
+    //Muitos ninjas para uma missão.
+    @ManyToOne
+    @JoinColumn(name = "missoes_id") //Foreing Key
+    private MissoesModel missoes;
 
     public NinjaModel() {
     }
