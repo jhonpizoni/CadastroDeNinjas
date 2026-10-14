@@ -18,8 +18,11 @@ public class MissoesModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
+
     private String rank;
+
     private NinjaModel ninja;
 
     //Uma missão para muitos ninjas.
