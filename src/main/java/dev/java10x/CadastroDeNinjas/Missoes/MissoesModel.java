@@ -23,8 +23,6 @@ public class MissoesModel {
 
     private String rank;
 
-    private NinjaModel ninja;
-
     //Uma missão para muitos ninjas.
     @OneToMany(mappedBy = "missoes")
     private List<NinjaModel> ninjas;
